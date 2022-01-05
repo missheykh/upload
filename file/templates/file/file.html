@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>file Path:{{files}}</h1>
+<a href="{{files}}">
+show file
+</a>
+{% comment %} <form action="files:show_files" method="POST">
+<label for="myfile">Select a file:</label>
+<input type="file" id="myfile" name="myfile" multiple> 
+</form> {% endcomment %}
+{% endblock content %}
+

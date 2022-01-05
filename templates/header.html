@@ -1,0 +1,22 @@
+<div id="header" class="category">
+    {%block header %}
+    <ul class="category">
+        <li><a href="{% url 'base'  %}">home</a></li>
+        <li><a href="{% url 'files:show_files' %}">Files</a></li>
+    
+    {% if user.is_authenticated %}
+        <li>hi {{user.username}}</li> 
+        <li><a href="{%url 'files:logout' %}">logout</a></li>
+    {% else %}
+        <li><a href="{% url 'files:login' %}">login</a></li>
+         <li><a href="{% url 'files:register' %}">register</a></li>
+    {% endif %}
+        {% comment %} <li>
+            <form action="{%url 'courses:course_search' %}" method="GET"> 
+            <input type="text" name="q" placeholder="course search" />
+            <input type="submit" value="search" />
+            </form>
+        </li> {% endcomment %}
+    </ul>
+    {%endblock header%}
+</div>

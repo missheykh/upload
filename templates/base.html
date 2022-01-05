@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}
+            {% endblock title %}</title>
+
+        {% comment %} <link href="static/css/bootstrap5.1.3.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> {% endcomment %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap5.1.3.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+ 
+
+        {% comment %} <style>
+            body {
+                direction: rtl;
+            }
+        </style> {% endcomment %}
+
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                {%block header%}
+                 {% include 'header.html' %}
+                {%endblock header%}
+            </div>
+            <div>
+                <div class="content">
+                    {% block content %}
+                    <h3>file upload website</h3>
+                    {% endblock content %}
+                </div>
+                <script>
+               
+                </script>
+                <div id="sidbar">
+                {%block sidbar%}
+                    {% comment %} {% include 'side.html' %} {% endcomment %}
+                {%endblock sidbar%}
+                </div>
+                <div id="footer">
+                {%block footer%}
+                    {% comment %} {% include 'footer.html' %} {% endcomment %}
+                {%endblock footer%}
+                </div>
+            </div>
+        </div>
+        {% comment %} <script src="{% static 'js/bootstrap.js' %}"></script> {% endcomment %}
+        {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> {% endcomment %}
+        {% comment %} <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script> {% endcomment %}
+        <script src="{% static 'js/main.js' %}"></script> 
+    </body>
+
+</html>
+
